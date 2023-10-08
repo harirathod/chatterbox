@@ -9,10 +9,11 @@ class Command(BaseCommand):
     
     It creates 100 fake entries in the database."""
     def __init__(self):
+        super().__init__()
         self.faker = Faker('en_GB')
 
     def handle(self, *args, **options):
-        """Create 100 fake entries in the database."""
+        """This code is run when 'python3 manage.py seed' is called."""
         for _ in range(100):
             # If we just used 'create', this wouldn't hash the password. Thus, we need to user "create_user()"
             user = User.objects.create_user(

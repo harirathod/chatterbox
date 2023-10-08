@@ -11,7 +11,7 @@ class Command(BaseCommand):
         super().__init__()
         
     def handle(self, *args, **options):
-        """Delete all users from the database."""
+        """This code is run when 'python3 manage.py unseed' is called."""
         for user in User.objects.all():
             user.delete()
         print("Deleted all users from the database.")
