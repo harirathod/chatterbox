@@ -7,6 +7,7 @@ import django.core.validators
 
 class User(AbstractUser):
     """Class defining a user for the microblogs app."""
+    
     username = models.CharField(
         error_messages={'unique': 'A user with that username already exists.'}, 
         help_text='Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.', 
